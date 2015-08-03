@@ -1,0 +1,26 @@
+extends layout
+//- Title of Page
+block title
+  title Login
+//- Page Header
+block header
+  | Login
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', layout='column', flex)
+    div(layout='column')
+      md-card.transition
+        md-toolbar(class='hidden', id='toolbarLogin', flex)
+          div(class='md-toolbar-tools')
+            h2.md-flex(id='login-content')
+        md-card-content(md-theme='default', flex)
+          form(ng-submit="login()")
+            div(layout='', layout-sm='column')
+              md-input-container(flex)
+                label Email
+                input(type='email', ng-model='formData.email')
+              md-input-container(flex)
+                label Password
+                input(type='password', ng-model='formData.password')
+            md-input-container(flex)
+              input(value='Login', type='submit', class='md-input-fix', aria-label='Login').font-fix

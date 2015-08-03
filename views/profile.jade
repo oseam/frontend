@@ -1,0 +1,21 @@
+extends layout
+//- Title of Page
+block title
+  title Profile
+//- Page Header
+block header
+  | Profile
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', layout='column', flex)
+    div(layout='row')
+      md-card(flex)
+        md-toolbar(class='md-accent', flex)
+          div(class='md-toolbar-tools')
+            h2.md-flex Your Profile
+        md-card-content(md-theme='default', flex)
+          div(layout='row', flex)
+            h2(flex) Your ID
+            h2(flex) #{id}
+          md-divider
+          div(layout='row', flex)

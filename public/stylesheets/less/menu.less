@@ -1,0 +1,158 @@
+// Give Navigation Hamburger Menu
+.menuBtn {
+  background-color:transparent;
+  border:none;
+  height:38px;
+  width:36px;
+  background:transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGcgaWQ9IkhlYWRlciI+CiAgICA8Zz4KICAgICAgICA8cmVjdCB4PSItNjE4IiB5PSItMjIzMiIgZmlsbD0ibm9uZSIgd2lkdGg9IjE0MDAiIGhlaWdodD0iMzYwMCIvPgogICAgPC9nPgo8L2c+CjxnIGlkPSJMYWJlbCI+CjwvZz4KPGcgaWQ9Ikljb24iPgogICAgPGc+CiAgICAgICAgPHJlY3QgZmlsbD0ibm9uZSIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+CiAgICAgICAgPHBhdGggZD0iTTMsMThoMTh2LTJIM1YxOHogTTMsMTNoMTh2LTJIM1YxM3ogTTMsNnYyaDE4VjZIM3oiIHN0eWxlPSJmaWxsOiNmM2YzZjM7Ii8+CiAgICA8L2c+CjwvZz4KPGcgaWQ9IkdyaWQiIGRpc3BsYXk9Im5vbmUiPgogICAgPGcgZGlzcGxheT0iaW5saW5lIj4KICAgIDwvZz4KPC9nPgo8L3N2Zz4=) no-repeat center center;
+}
+
+md-toolbar h1 {
+  font-weight:normal;
+}
+
+md-list .md-button {
+  color:inherit;
+  font-weight:500;
+  text-align:left;
+  width:100%;
+}
+
+// Create the User Header / Profile in Navigation for mobile.
+.navigation-user-header {
+  margin: 0px;
+  padding: 0px;
+  background-size: cover;
+  background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);
+}
+
+.navigation-image {
+  margin-bottom: 10px;
+}
+
+.navigation-image img {
+  width: 54px;
+  height: 54px;
+  margin: 16px;
+  border-radius: 50%;
+}
+
+// john@doe.com Email w/ Caret (Arrow Down)
+.user-email {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+.user-email a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+.user-email a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.user-email a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.user-email:hover, .user-email:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #000000;
+}
+
+.user-email-link {
+  display: block;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  position: fixed;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+/*
+ * Navigation
+ */
+
+md-list-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 48px;
+}
+
+md-list-item.md-no-proxy.md-button, md-list-item .md-no-style.md-button {
+  font-size: inherit;
+  height: inherit;
+  text-align: left;
+  text-transform: none;
+  width: 100%;
+  white-space: normal;
+}
+
+md-list-item > .md-avatar:first-child, md-list-item .md-list-item-inner > .md-avatar:first-child {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+md-list-item > p, md-list-item > .md-list-item-inner > p, md-list-item .md-list-item-inner > p, md-list-item .md-list-item-inner > .md-list-item-inner > p {
+  -webkit-flex: 1;
+    -ms-flex: 1;
+        flex: 1;
+}
+
+md-list-item.md-with-secondary {
+  position: relative;
+}
+
+md-list-item.md-no-proxy, md-list-item .md-no-style {
+  position: relative;
+  padding: 0px 16px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  transition: background-color 0.15s linear;
+}
+
+.md-avatar {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}

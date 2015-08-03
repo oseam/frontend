@@ -1,0 +1,16 @@
+extends layout
+//- Title of Page
+block title
+  title DenDelight
+//- Page Header
+block header
+  | DenDelight
+//- Content of Page
+block content
+  #content(md-theme='background-fix', layout='column', flex, data-ng-init='homeServices()')
+    div(id='homeContent', flex)
+      md-grid-list(md-cols-sm='3', md-cols-md='2', md-cols-lg='4', md-cols-gt-lg='6', md-row-height-gt-md='1:1', md-row-height='2:2', md-gutter='12px', md-gutter-gt-sm='8px').gridHome
+        md-grid-tile(md-colspan='2', md-colspan-md='1', md-colspan-sm='3', md-rowspan-sm='2' ng-repeat='service in services', ng-scope style='color: #FFFFFF; background: rgba(0, 0, 0, 0.5) url({{ service.bg }}); background-repeat: no-repeat; background-size: 100% 100%;')
+          h1 {{ service.price }}
+          md-grid-tile-footer
+            h3.capitalize {{ service.name }} - {{ service.type }} (Last Updated: {{ service.updatedAt }})

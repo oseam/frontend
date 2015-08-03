@@ -1,0 +1,26 @@
+extends layout
+
+//- Title of Page
+block title
+  title #{title}
+//- Page Header
+block header
+  header #{title}
+//- The Users Navigation
+block loggedInNav
+  if !loggedIn
+    .navigation-user-header(hide-gt-lg, hide-lg, hide-md)
+      .navigation-image
+        img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg")
+      .user-email
+        a(data-toggle="dropdown" href="#" class="user-email-link")
+            a(href='#') test
+          b(class="caret")
+//- Content of Page
+block content
+  md-content.md-padding(layout='column', flex)
+    div(layout='row')
+      md-card(flex)
+        md-card-content(flex)
+          h1.align-center Header
+          h2.align-center message

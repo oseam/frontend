@@ -1,0 +1,22 @@
+extends layout
+//- Title of Page
+block title
+  title= error.status
+//- Page Header
+block header
+  header= error.status
+//- The User's Navigation
+block loggedInNav
+  .navigation-user-header(hide-gt-lg, hide-lg, hide-md)
+    .user-email
+      a(data-toggle="dropdown" href="#" class="user-email-link")
+        | Not logged in yet!
+        b(class="caret")
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', layout='column', flex)
+    div(layout='row')
+      md-card(flex)
+        md-card-content(md-theme='default', flex)
+          h1.error= error.status
+          h2.error= message

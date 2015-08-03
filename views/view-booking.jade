@@ -1,0 +1,33 @@
+extends layout
+//- Title of Page
+block title
+  title View Bookings
+//- Page Header
+block header
+  | View Bookings
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', class='allowScroll', layout='column', data-ng-init='viewBookings()', flex)
+    div
+      md-card( flex)
+        md-toolbar(class='md-accent', flex)
+          div(class='md-toolbar-tools')
+            h2.md-flex Your Bookings
+        md-card-content(flex)
+          h1 You have {{ bookingList.length }} Bookings
+    #content(ng-repeat='item in bookingList', layout='row')
+      md-card(flex)
+        md-toolbar(class='md-accent', flex)
+          div(class='md-toolbar-tools')
+            img(ng-src='{{ item.providerId.avatar }}', class='md-avatar')
+            h2.md-flex.capitalize {{ item.providerId.firstName }} {{ item.providerId.lastName }}
+        md-card-content(md-theme='default', flex)
+          div(layout='row', flex)
+            div(layout='row', flex)
+              h4.capitalize Service: {{ item.leafRemoval.name }}
+            div(layout='row', flex)
+              h4.capitalize Estimated Size: {{ item.leafRemoval.estimatedSize }}
+            div(layout='row', flex)
+              h4.capitalize Address: {{ item.leafRemoval.address }}
+            div(layout='row', flex)
+              h4.capitalize Booking Time: {{ bookTime }}

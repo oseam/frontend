@@ -1,0 +1,27 @@
+extends layout
+//- Title of Page
+block title
+  title Logout
+//- Page Header
+block header
+  | Logout
+//- The User's Navigation
+block loggedInNav
+  .navigation-user-header(hide-gt-lg, hide-lg, hide-md)
+    .navigation-image
+      img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg")
+    .user-email
+      a(data-toggle="dropdown" href="#" class="user-email-link")
+          a(href='#') test
+        b(class="caret")
+//- Content of Page
+block content
+  #content(layout='column', flex data-ng-init='logout()')
+    div(ng-controller='AppCtrl', layout='column')
+      md-content(md-theme='background-fix', flex)
+        md-card(flex).transition
+          md-toolbar(class='hidden', id='toolbarLogout', flex)
+            div(class='md-toolbar-tools')
+              h2.md-flex(id='error-content')
+          md-card-content(id='card-content', flex)
+            h1.align-center Loading...

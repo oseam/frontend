@@ -1,0 +1,67 @@
+extends layout
+//- Title of Page
+block title
+  title Find A Gardener
+//- Page Header
+block header
+  | Find A Gardener
+//- The User's Navigation
+block loggedInNav
+  if !loggedIn
+    .navigation-user-header(hide-gt-lg, hide-lg, hide-md)
+      .navigation-image
+        img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg")
+      .user-email
+        a(data-toggle="dropdown" href="#" class="user-email-link")
+            a(href='#') test
+          b(class="caret")
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', layout='column', flex)
+    div
+      md-card(id="service-selection", flex)
+        md-toolbar(class='md-accent', id='toolbarLogout', flex)
+          div(class='md-toolbar-tools')
+            h2.md-flex(id='error-content') Find A Gardener
+        md-card-content(md-theme='default', flex)
+              div(layout='row')
+                md-select(placeholder="Select a service", ng-model="findService.name", ng-change="getService()", flex)
+                  md-option(value="mowing") Mowing
+                  md-option(value="leaf_removal") Leaf Removal
+                  md-option(value="yard_cleaning") Yard Cleaning
+      div#findGrid(layout-sm='column', layout-md='column', layout-gt-md='row', flex)  
+      div#findTime(class='hidden', layout-sm='column', layout-md='column', layout-gt-md='row')
+        md-card(flex)
+          md-toolbar.md-accent.md-background-fix-theme(flex)
+            .md-toolbar-tools
+              h2#backTime.md-flex
+                a(href='#')
+                  svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewbox='0 0 24 24', class='svg-white')
+                    path(d='M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z')
+                    path(d='M0-.5h24v24H0z', fill='none')
+              h2#enter-address.md-flex Select a Time
+          md-card-content(layout='row', flex).capitalize
+            span(hide-sm, hide-md, hide-lg, hide-gt-lg, flex)
+            time-date-picker(ng-model="clickedService.bookTime", default-mode="time", display-twentyfour="true", display-mode="time", id="timePicker", flex)
+            span(hide-sm, hide-md, hide-lg, flex)
+            //- div(flex)
+      div#findAddress(class='hidden', layout-sm='column', layout-md='column', layout-gt-md='row', flex)
+        md-card(flex)
+          md-toolbar.md-accent.md-background-fix-theme(flex)
+            .md-toolbar-tools
+              h2#backAddress.md-flex
+                a(href='#')
+                  svg(xmlns='http://www.w3.org/2000/svg', width='24', height='24', viewbox='0 0 24 24', class='svg-white')
+                    path(d='M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z')
+                      path(d='M0-.5h24v24H0z', fill='none')
+              h2#enter-address.md-flex Enter Your Address
+          md-card-content.capitalize
+            form(ng-submit='findProviders()')
+              md-input-container(flex)
+                label Address
+                input(ng-model='clickedService.address')
+              md-input-container(flex)
+                input(value='Submit', type='submit', class='md-input-fix', aria-label='Submit').font-fix
+      div#serviceProviders(layout-sm='column', layout-md='column', layout-gt-md='row', flex)  
+      div#createBookingCard(layout-sm='column', layout-md='column', layout-gt-md='row', flex)  
+      div#createBookingCardError(layout-sm='column', layout-md='column', layout-gt-md='row', flex)  

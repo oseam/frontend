@@ -1,0 +1,26 @@
+extends layout
+//- Title of Page
+block title
+  title Register
+//- Page Header
+block header
+  | Register
+//- Content of Page
+block content
+  md-content.md-padding(md-theme='background-fix', layout='column', flex)
+    div(layout='column')
+      md-card.transition
+        md-toolbar(class='hidden', id='toolbarRegister', flex)
+          div(class='md-toolbar-tools')
+            h2.md-flex(id='register-content')
+        md-card-content(md-theme='default', flex)
+          form(ng-submit="register()")
+            div(layout='', layout-sm='column')
+              md-input-container(flex)
+                label Email
+                input(ng-model='formData.email', type='email')
+              md-input-container(flex='')
+                label Password
+                input(ng-model='formData.password', type='password')
+            md-input-container(flex)
+              input(value='Register', type='submit', class='md-input-fix', aria-label='Register').font-fix

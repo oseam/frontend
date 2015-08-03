@@ -1,0 +1,10 @@
+{
+  "name": "oseam",
+  "description": "Find pre screened home service professionals such as gardners and cleaners in just 60 seconds",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "144": "/img/icon-144.png"
+  },
+  "default_locale": "en"
+}
